@@ -18,8 +18,8 @@
     <ClInclude Include="binarytree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="binarytree_inpl.h">
-      <Filter>Resource Files</Filter>
+    <ClInclude Include="binarytree_impl.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -85,7 +85,7 @@ public:
 	T GetMaxValue();
 
 	/**
-	 * @brief Draws a binary tree on the console.
+	 * @brief Prints values of a binary tree on the console.
 	*/
 	void Display();
 
@@ -101,6 +101,13 @@ public:
 	*/
 	bool HasValue(T value);
 
+	// def lab task func
+	BinaryTree<T> ReturnSubTree(int less_than);
+
+	std::vector<T> deepFirstSearch(T value);
+
+	std::vector<T> breadthFirstSearch(T value);
+
 	~BinaryTree();
 
 private:
@@ -111,23 +118,18 @@ private:
 		Node(T val) : data(val), left(nullptr), right(nullptr) {}
 	};
 
-	T deepFirstSearch(T value);
-	T breadthFirstSearch(T value);
-
 	Node* head;
 
-	void setLeft(Node target, T value);
-	void setRight(Node target, T value);
-	void addNode(Node* node, T value);
-	int calculateHeight(Node* node);
-	void displayInOrder(Node* node);
-	bool searchValue(Node* node, T value);
 	Node* findMin(Node* node);
+	Node* findMax(Node* node);
+
 	void deleteTree(Node* node);
-	Node* removeRecursive(Node* node, T value);
 	Node* copyTree(const BinaryTree<T>& other);
 
-	void print(const std::wstring& prefix, const Node* node, bool isLeft);
+	// def lab task helper func
+	Node* returnSubTreeNode(Node* node, int less_than);
+
+	void print(const std::string& prefix, const Node* node, bool isLeft);
 };
 
-#include "binarytree_inpl.h"
+#include "binarytree_impl.h"
